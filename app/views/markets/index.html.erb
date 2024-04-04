@@ -2,7 +2,7 @@
   <%= stylesheet_link_tag 'styles' %>
 </head>
 
-<h1 style="text-align:center">Markets</h1>
+<h1>Markets</h1>
 
 <div class="flex-table">
   <div class="flex-row header">
@@ -11,6 +11,7 @@
     <div class="flex-cell">State</div>
     <div class="flex-cell"></div>
   </div>
+
   <% @markets['data'].each do |market| %>
     <div class="flex-row">
       <div class="flex-cell"><%= market['attributes']['name'] %></div>
