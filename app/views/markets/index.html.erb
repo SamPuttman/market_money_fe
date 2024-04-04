@@ -1,11 +1,22 @@
-<h1>Markets</h1>
+<head>
+  <%= stylesheet_link_tag 'styles' %>
+</head>
 
-<ul>
+<h1 style="text-align:center">Markets</h1>
+
+<div class="flex-table">
+  <div class="flex-row header">
+    <div class="flex-cell">Name</div>
+    <div class="flex-cell">City</div>
+    <div class="flex-cell">State</div>
+    <div class="flex-cell"></div>
+  </div>
   <% @markets['data'].each do |market| %>
-    <li>
-      <h2><%= market['attributes']['name'] %></h2>
-      <p><%= market['attributes']['city'] %>, <%= market['attributes']['state'] %></p>
-      <%= link_to 'More Info', market_path(market['id']), class: 'button' %>
-    </li>
+    <div class="flex-row">
+      <div class="flex-cell"><%= market['attributes']['name'] %></div>
+      <div class="flex-cell"><%= market['attributes']['city'] %></div>
+      <div class="flex-cell"><%= market['attributes']['state'] %></div>
+      <div class="flex-cell"><%= link_to 'More Info', market_path(market['id']), class: 'button' %></div>
+    </div>
   <% end %>
-</ul>
+</div>
