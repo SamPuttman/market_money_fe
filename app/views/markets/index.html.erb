@@ -1,0 +1,11 @@
+<h1>Markets</h1>
+
+<ul>
+  <% @markets['data'].each do |market| %>
+    <li>
+      <h2><%= market['attributes']['name'] %></h2>
+      <p><%= market['attributes']['city'] %>, <%= market['attributes']['state'] %></p>
+      <%= link_to 'More Info', market_path(market['id']), class: 'button' %>
+    </li>
+  <% end %>
+</ul>
