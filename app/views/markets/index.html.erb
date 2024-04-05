@@ -12,12 +12,12 @@
     <div class="flex-cell"></div>
   </div>
 
-  <% @markets['data'].each do |market| %>
+  <% @markets.each do |market| %>
     <div class="flex-row">
-      <div class="flex-cell"><%= market['attributes']['name'] %></div>
-      <div class="flex-cell"><%= market['attributes']['city'] %></div>
-      <div class="flex-cell"><%= market['attributes']['state'] %></div>
-      <div class="flex-cell"><%= link_to 'More Info', market_path(market['id']), class: 'button' %></div>
+      <div class="flex-cell"><%= market.name %></div>
+      <div class="flex-cell"><%= market.city %></div>
+      <div class="flex-cell"><%= market.state %></div>
+      <div class="flex-cell"><%= link_to 'More Info', market_path(market.id), class: 'button' %></div>
     </div>
   <% end %>
 </div>

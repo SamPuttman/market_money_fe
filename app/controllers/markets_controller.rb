@@ -7,7 +7,6 @@ class MarketsController < ApplicationController
   def show
     market_id = params[:id]
     market_service = MarketService.new
-    market_data = market_service.find_market(market_id)
-    @market = Market.new(market_data)
+    @market = market_service.find_market(market_id)
   end
 end

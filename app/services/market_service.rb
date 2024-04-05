@@ -5,11 +5,12 @@ class MarketService
 
   def all_markets
     response = @conn.get("markets")
-    JSON.parse(response.body)
+    JSON.parse(response.body)['data'].map { |market_attributes| Market.new(market_attributes) }
   end
 
   def find_market(market_id)
     response = @conn.get("markets/#{market_id}")
-    JSON.parse(response.body)['data']
+    market_data = JSON.parse(response.body)['data']
+    Market.new(market_data)
   end
 end
